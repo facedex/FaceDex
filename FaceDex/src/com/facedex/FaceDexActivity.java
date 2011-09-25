@@ -1,6 +1,6 @@
 package com.facedex;
 
-import com.facedex.service.MessengerService;
+//import com.facedex.service.MessengerService;
 //import com.facedex.service.MessengerService.IncomingHandler;
 
 import android.app.Activity;
@@ -22,6 +22,7 @@ import android.widget.Toast;
 //Need the following import to get access to the app resources, since this
 //class is in a sub-package.
 import com.facedex.R;
+import com.facedex.service.FacedexService;
 /* PROGRAM ENTRY
  * 
  */
@@ -30,6 +31,10 @@ public class FaceDexActivity extends Activity {
     protected void onStart() {
         super.onStart();
         setContentView(R.layout.main);
+        
+     // Start service
+        Intent intent = new Intent(this, FacedexService.class);
+        startService(intent);
         
         Button cameraButton = (Button)findViewById(R.id.cameraButton);
         cameraButton.setOnClickListener(new OnClickListener() {

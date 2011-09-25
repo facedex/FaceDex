@@ -24,7 +24,7 @@
         	android:label="@string/app_name">
 
 	 	</activity>
-		<service android:name=".service.MessengerService" android:label="@string/app_name" />
+		<service android:name=".service.FacedexService" android:label="@string/app_name" />
 		<activity android:name=".StartFacesActivity" android:label="@string/app_name" >
 		    <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

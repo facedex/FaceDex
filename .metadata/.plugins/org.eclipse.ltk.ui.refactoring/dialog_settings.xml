@@ -5,6 +5,6 @@
 		<item value="600" key="width"/>
 	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
-		<item value="false" key="deleteSubPackages"/>
+		<item value="true" key="deleteSubPackages"/>
 	</section>
 </section>

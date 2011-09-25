@@ -1,4 +1,7 @@
 package com.facedex;
+import com.facedex.service.FacedexService;
+import com.facedex.service.FacedexService.LocalBinder;
+//import com.facedex.service.MessengerService;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -15,129 +18,26 @@ import android.os.RemoteException;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facedex.service.MessengerService;
-
 public class StartFacesActivity extends Activity {
-    /** Messenger for communicating with the service. */
-    Messenger mService = null;
+	FacedexService mService;
+    boolean mBound = false;
 
-    /** Flag indicating whether we have called bind on the service. */
-    boolean mBound;
-
-    /**
-     * Class for interacting with the main interface of the service.
-     */
-    private ServiceConnection mConnection = new ServiceConnection() {
-        public void onServiceConnected(ComponentName className, IBinder service) {
-            // This is called when the connection with the service has been
-            // established, giving us the object we can use to
-            // interact with the service.  We are communicating with the
-            // service using a Messenger, so here we get a client-side
-            // representation of that from the raw IBinder object.
-            mService = new Messenger(service);
-            mBound = true;
-            
-            
-            
-            // We want to monitor the service for as long as we are
-            // connected to it, i.e. we register this activity as a callback client.
-            try {
-                Message msg = Message.obtain(null,
-                        MessengerService.MSG_REGISTER_CLIENT);
-                msg.replyTo = mMessenger;
-                mService.send(msg);
-            } catch (RemoteException e) {
-                // In this case the service has crashed before we could even
-                // do anything with it; we can count on soon being
-                // disconnected (and then reconnected if it can be restarted)
-                // so there is no need to do anything here.
-            }
-            
-            // Start work
-            sayHello();
-        }
-
-        public void onServiceDisconnected(ComponentName className) {
-            // This is called when the connection with the service has been
-            // unexpectedly disconnected -- that is, its process crashed.
-            mService = null;
-            mBound = false;
-        }
-    };
-
-    
-    public void sayHello() {
-        if (!mBound) return;
-        // Create and send a message to the service, using a supported 'what' value, and new value '5' as arg1
-        Message msg = Message.obtain(null, MessengerService.MSG_SET_VALUE, 5, 0);
-        try {
-            mService.send(msg);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    /**
-     * Target we publish for clients to send messages to IncomingHandler.
-     */
-    final Messenger mMessenger = new Messenger(new IncomingHandler());
-    
-    
-    /**
-     * Command to service to set a new value.  This can be sent to the
-     * service to supply a new value, and will be sent by the service to
-     * any registered clients with the new value.
-     */
-    static final int MSG_SET_VALUE = 3;
- 
-    /**
-     * Handler of incoming messages from clients.
-     */
-    class IncomingHandler extends Handler {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case MSG_SET_VALUE:
-                	//messageSetValue(msg);
-                    Toast.makeText(getApplicationContext(), "SERVice RESPONSE: " + msg.arg1, Toast.LENGTH_SHORT).show();
-                    //setContentView(R.layout.allfaces);
-                    break;
-                default:
-                    super.handleMessage(msg);
-            }
-        }
-    }
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.loading);
+        setContentView(R.layout.loading);      
     }
 
-   
     @Override
     protected void onStart() {
         super.onStart();
+        // Bind to FacedexService
         // Bind to the service
-        bindService(new Intent(this, MessengerService.class), mConnection,
+        bindService(new Intent(this, FacedexService.class), mConnection,
             Context.BIND_AUTO_CREATE);
-        
-       
-        //sayHello();
-        /* USAGE EXAMPLE
-        Button facesButton = (Button) findViewById(R.id.facesButton);
-
-        
-        facesButton.setOnClickListener(new OnClickListener() {
-			
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				sayHello(v);
-			}
-		});
-		*/
     }
 
     @Override
@@ -149,4 +49,48 @@ public class StartFacesActivity extends Activity {
             mBound = false;
         }
     }
-}
+
+    
+    /**
+     * Asynctask using the service
+     */
+    private class NewPhotoTask extends AsyncTask<Void, Integer, String> {
+        protected String doInBackground(Void... urls) {
+            //return mService.getRandomNumber();
+        	return mService.getLOL();
+        }
+
+        protected void onProgressUpdate(Integer... progress) {
+            //setProgressPercent(progress[0]);
+        }
+
+        protected void onPostExecute(String result) {
+            gotResultFromService(result);        	
+        }
+    }
+    
+    public void gotResultFromService(String result) {
+		Toast.makeText(this, "lol: " + result, Toast.LENGTH_LONG).show();
+		
+	}
+    
+    
+    /** Defines callbacks for service binding, passed to bindService() */
+    private ServiceConnection mConnection = new ServiceConnection() {
+
+    	public void onServiceConnected(ComponentName className,
+                IBinder service) {
+            // We've bound to LocalService, cast the IBinder and get LocalService instance
+            LocalBinder binder = (LocalBinder) service;
+            mService = binder.getService();
+            mBound = true;
+            new NewPhotoTask().execute();
+        }
+
+        public void onServiceDisconnected(ComponentName arg0) {
+            mBound = false;
+        }
+    };
+
+
+	}

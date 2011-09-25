@@ -1,4 +1,4 @@
-#Sun Sep 25 13:59:04 CEST 2011
+#Sun Sep 25 17:45:42 CEST 2011
 content_assist_proposals_foreground=0,0,0
 spelling_locale_initialized=true
 content_assist_disabled_computers=org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000
@@ -17,5 +17,5 @@ org.eclipse.jdt.ui.formatterprofiles.version=11
 content_assist_number_of_computers=18
 useQuickDiffPrefPage=true
 org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="android.os.Parcelable"><rhs name\="android.os.Message"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="android.os.Parcelable"><rhs name\="android.os.Message"/><rhs name\="android.content.Intent"/></lhs><lhs name\="android.content.Intent"><rhs name\="android.content.Intent"/></lhs></history>
 org.eclipse.jdt.ui.text.code_templates_migrated=true

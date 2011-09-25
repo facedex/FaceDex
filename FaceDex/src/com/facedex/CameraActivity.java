@@ -63,9 +63,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback,
 		blitz.setOnCheckedChangeListener(this);
 		
 		Context context = getApplicationContext();
-		String text = "Welcome to wingman! Please click the screen to start recognizing people!"; 
-		Toast toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
-		toast.show();
 	}
 
 	@Override

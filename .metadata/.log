@@ -1110,3 +1110,38 @@ com.android.ddmlib.ShellCommandUnresponsiveException
 	at com.android.ide.eclipse.adt.internal.launch.AndroidLaunchController.simpleLaunch(AndroidLaunchController.java:823)
 	at com.android.ide.eclipse.adt.internal.launch.AndroidLaunchController.access$3(AndroidLaunchController.java:807)
 	at com.android.ide.eclipse.adt.internal.launch.AndroidLaunchController$3.run(AndroidLaunchController.java:655)
+!SESSION 2011-09-25 18:26:58.529 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.7.0
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.rcp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.rcp.product
+
+!ENTRY org.eclipse.jdt.debug 4 125 2011-09-25 19:09:40.665
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 1
+org.eclipse.debug.core.DebugException: VM does not support access watchpoints.
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaWatchpoint.notSupported(JavaWatchpoint.java:176)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaWatchpoint.createRequest(JavaWatchpoint.java:148)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.createRequests(JavaBreakpoint.java:568)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.addToTarget(JavaBreakpoint.java:532)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaLineBreakpoint.addToTarget(JavaLineBreakpoint.java:161)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.breakpointAdded(JDIDebugTarget.java:1206)
+	at org.eclipse.debug.internal.core.BreakpointManager$BreakpointNotifier.run(BreakpointManager.java:920)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.BreakpointManager$BreakpointNotifier.notify(BreakpointManager.java:946)
+	at org.eclipse.debug.internal.core.BreakpointManager.fireUpdate(BreakpointManager.java:860)
+	at org.eclipse.debug.internal.core.BreakpointManager.addBreakpoints(BreakpointManager.java:579)
+	at org.eclipse.debug.internal.core.BreakpointManager.addBreakpoints(BreakpointManager.java:549)
+	at org.eclipse.debug.internal.core.BreakpointManager.addBreakpoint(BreakpointManager.java:542)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.register(JavaBreakpoint.java:194)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaWatchpoint$1.run(JavaWatchpoint.java:116)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1975)
+	at org.eclipse.debug.core.model.Breakpoint.run(Breakpoint.java:335)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaWatchpoint.<init>(JavaWatchpoint.java:119)
+	at org.eclipse.jdt.debug.core.JDIDebugModel.createWatchpoint(JDIDebugModel.java:479)
+	at org.eclipse.jdt.internal.debug.ui.actions.ToggleBreakpointAdapter$5.run(ToggleBreakpointAdapter.java:875)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.debug.core 4 5011 2011-09-25 19:09:40.666
+!MESSAGE VM does not support access watchpoints.

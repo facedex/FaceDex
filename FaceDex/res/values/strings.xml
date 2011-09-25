@@ -2,4 +2,6 @@
 <resources>
     <string name="hello">Hello World, FaceDexActivity!</string>
     <string name="app_name">FaceDex</string>
+    <string name="local_service_started">local service started</string>
+    <string name="local_service_stopped">local_service_stopped</string>
 </resources>

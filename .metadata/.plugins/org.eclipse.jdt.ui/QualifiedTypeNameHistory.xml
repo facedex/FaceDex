@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="android.app.Notification"/>
 <fullyQualifiedTypeName name="android.app.PendingIntent"/>
 <fullyQualifiedTypeName name="android.app.NotificationManager"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="android.app.Service"/>
-<fullyQualifiedTypeName name="com.facedex.R"/>
 <fullyQualifiedTypeName name="com.facedex.FaceDexActivity"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.os.Handler"/>
@@ -20,7 +18,17 @@
 <fullyQualifiedTypeName name="com.facedex.service.RemoteService"/>
 <fullyQualifiedTypeName name="com.facedex.service.RemoteService.Controller"/>
 <fullyQualifiedTypeName name="com.facedex.R.id"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.os.Message"/>
 <fullyQualifiedTypeName name="com.facedex.service.MessengerService"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="com.facedex.R"/>
+<fullyQualifiedTypeName name="com.facedex.StartFacesActivity"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="com.facedex.CameraActivity"/>
+<fullyQualifiedTypeName name="com.facedex.R.layout"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="android.os.AsyncTask"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="android.app.IntentService"/>
 </qualifiedTypeNameHistroy>
