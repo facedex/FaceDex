@@ -1,0 +1,22 @@
+package com.facedex.service;
+
+import android.app.IntentService;
+import android.content.Intent;
+
+public class FacecomService extends IntentService{
+	private static boolean DONE = false;
+	private static int RESULT = 0;
+
+	public FacecomService() {
+		super("FacecomService");
+	}
+
+	@Override
+	protected void onHandleIntent(Intent intent) {
+		// TODO Auto-generated method stub
+		if(DONE)
+		{
+			return RESULT;
+		}
+	}
+}

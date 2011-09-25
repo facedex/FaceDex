@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item
+  xmlns:android="http://schemas.android.com/apk/res/android">
+   
+<resources>
+    <color name="default_background">#24253B</color>
+</resources>
+    
+</item>

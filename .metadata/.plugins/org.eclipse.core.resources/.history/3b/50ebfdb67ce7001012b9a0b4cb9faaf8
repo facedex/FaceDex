@@ -1,0 +1,6 @@
+package com.facedex;
+
+public class ProcessPhoto implements Asy{
+
+
+}

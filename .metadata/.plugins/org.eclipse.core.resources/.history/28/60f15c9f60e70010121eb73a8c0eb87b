@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, FaceDexActivity!</string>
+    <string name="app_name">FaceDex</string>
+    <string name="remote_service_started">Facedex service started</string>
+    <string name="remote_service_stopped">Facedex service stopped</string>
+    <string name="remote_service_label">Facedex service label</string>
+</resources>
